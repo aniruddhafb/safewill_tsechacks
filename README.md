@@ -11,3 +11,6 @@ We are using NextJs for frontend, solidity for smart-contracts, hardhat for depl
 >On what chains we are deployed on ?
 polygon, ethereum and filecoin.
 
+To test safewill platform you can visit the following links -
+Replit - (will update soon..)
+Production website - safewill.app (Under development)
