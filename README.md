@@ -1,13 +1,4 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+How We Earn ?
+1) We as a platform charges 2% and 1% every time a will is consumed or deployed.
+2) We earn Interest income every time some user takes loan from us (15% Interest Rate Per Annum).
+3) We also charge a penatly fee of 10 matic if a will creator cancels his/her will after successful deployment.
