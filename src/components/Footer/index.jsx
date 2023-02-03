@@ -12,7 +12,7 @@ const Footer = () => {
             href="/"
             className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
           >
-            <Image src={safeWillPng} height={60} width={60} />
+            <Image alt="" src={safeWillPng} height={60} width={60} />
             <span className="ml-3 text-xl">SafeWill</span>
           </Link>
           <p className="mt-2 text-sm text-gray-500">
@@ -35,10 +35,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/consume_will"
+                  href="/action_will"
                   className="text-gray-600 hover:text-gray-800"
                 >
-                  Consume Will
+                  Claim Will
                 </Link>
               </li>
               <li>

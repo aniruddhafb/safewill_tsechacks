@@ -8,16 +8,21 @@ const connect_wallet = ({ connectToContract }) => {
   // IT CONNECTS TO USER WALLET
   const connectToWallet = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    console.log(window.ethereum);
 
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
+    localStorage.setItem("signer", signer);
+    let address = await signer.getAddress();
+    localStorage.setItem("wallet_address", address);
     connectToContract(signer);
     const network = await provider.getNetwork();
-    if (network.chainId !== 80001)
-      return alert("Please Switch To Matic Network");
+    // if (network.chainId !== 80001)
+    //   return alert("Please Switch To Matic Network");
   };
 
   useEffect(() => {}, []);
+  
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-2 py-12 mx-auto">
@@ -31,7 +36,7 @@ const connect_wallet = ({ connectToContract }) => {
                 Connect Wallet
               </h1>
               <p className="leading-relaxed mb-3 flex justify-center">
-                <Image src={metamaskFox} height={200} width={200} />
+                <Image alt="" src={metamaskFox} height={200} width={200} />
               </p>
               <button onClick={connectToWallet}>
                 <a className="text-indigo-500 inline-flex items-center">
@@ -40,10 +45,10 @@ const connect_wallet = ({ connectToContract }) => {
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>

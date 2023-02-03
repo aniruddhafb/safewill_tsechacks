@@ -36,15 +36,15 @@ export default function Home() {
                   Create a Will
                 </button>
               </Link>
-              <Link href="/consume_will">
+              <Link href="/action_will">
                 <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                  Consume a Will
+                  Claim a Will
                 </button>
               </Link>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <Image alt="" src={heroImage} className="w-[33rem]" />
+            <Image alt="hero" src={heroImage} className="w-[33rem]" />
           </div>
         </div>
       </section>
@@ -129,11 +129,11 @@ export default function Home() {
                 </span>
 
                 <h1 className="text-2xl font-semibold text-gray-700 capitalize ">
-                  Consume Will
+                  Claim Will
                 </h1>
 
                 <p className="text-gray-500 ">
-                  Consume a will created by your parents/grandparents after they
+                  Claim a will created by your parents/grandparents after they
                   get devoided of life.
                 </p>
               </div>
