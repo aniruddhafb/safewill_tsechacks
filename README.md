@@ -20,5 +20,5 @@ We are using NextJs for frontend, solidity for smart-contracts, hardhat for depl
 polygon, ethereum and filecoin.
 
 To test safewill platform you can visit the following links -
-Replit - (will update soon..)
+Replit - https://replit.com/@aniruddhafb/safewilltsechacks?v=1
 Production website - safewill.app (Under development)
