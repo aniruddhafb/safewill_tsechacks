@@ -143,7 +143,7 @@ const Navbar = ({ connectToContract, userAddress }) => {
 
   const Dropdown = () => {
     return (
-      <div className="p-3 rounded-lg shadow-lg text-black absolute right-0 top-16 flex">
+      <div className="p-3 rounded-lg shadow-lg text-black absolute right-[-60px] top-12 flex w-[200px]">
         <div className="flex flex-col justify-center">
           <Link href={"/edit_profile"}>Edit Profile</Link>
           <Link href={"/update_presence"}>Update Presence</Link>
@@ -233,7 +233,7 @@ const Navbar = ({ connectToContract, userAddress }) => {
               />
               <BsChevronDown />
             </div>
-            <div>
+            <div className="relative">
               <ul>{openDropdown && <Dropdown />}</ul>
             </div>
           </>

@@ -20,6 +20,9 @@ export default function App({ Component, pageProps }) {
     setSigner(signer);
     let _user_address = await signer.getAddress();
     setUserAddress(_user_address);
+    const network = await provider.getNetwork();
+    if (network.chainId != 80001)
+      return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
     const ProjectFactoryContract = new ethers.Contract(
       contractMumbaiAddress,
       abi.abi,

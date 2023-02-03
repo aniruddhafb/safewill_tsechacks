@@ -17,11 +17,11 @@ const Connect_wallet = ({ connectToContract }) => {
     localStorage.setItem("wallet_address", address);
     connectToContract(signer);
     const network = await provider.getNetwork();
-    // if (network.chainId !== 80001)
-    //   return alert("Please Switch To Matic Network");
+    if (network.chainId !== 80001)
+      return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <section className="text-gray-600 body-font">

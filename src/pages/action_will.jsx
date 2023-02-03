@@ -56,7 +56,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
   return (
     <section className="text-gray-600 body-font">
       {userAddress ? (
-        <div className="container px-5 py-24 mt-[-70px]">
+        <div className="container px-5 py-24 mt-[-70px] flex flex-col justify-center align-middle w-full">
           <h2 className="text-center font-bold text-3xl mt-2">Your Wills</h2>
           <p className="text-center text-1xl mt-2">
             Below you will find wills created or to be claimed by you
@@ -75,7 +75,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     </h1>
                     <p className="leading-relaxed mb-3">{e.description}</p>
                     {!e.beneficiaries.includes(userAddress) ? (
-                      <Link
+                      <div
                         onClick={() => cancelWill_of_beneficiary(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer text-red-500"
                       >
@@ -92,9 +92,9 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </Link>
+                      </div>
                     ) : (
-                      <Link
+                      <div
                         onClick={() => claimToken(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer"
                       >
@@ -111,7 +111,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </Link>
+                      </div>
                     )}
                     <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                       <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -154,7 +154,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     </h1>
                     <p className="leading-relaxed mb-3">{e.description}</p>
                     {!e.beneficiaries.includes(userAddress) ? (
-                      <Link
+                      <div
                         onClick={() => cancelWill_of_beneficiary(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer text-red-500"
                       >
@@ -171,9 +171,9 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </Link>
+                      </div>
                     ) : (
-                      <Link
+                      <div
                         onClick={() => claimToken(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer"
                       >
@@ -190,7 +190,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </Link>
+                      </div>
                     )}
                     <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                       <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -229,7 +229,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     {e.title}
                   </h1>
                   <p className="leading-relaxed mb-3">{e.description}</p>
-                  <Link
+                  <div
                     onClick={() => claimToken(e.will)}
                     className="text-indigo-500 inline-flex items-center cursor-pointer"
                   >
@@ -246,7 +246,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
-                  </Link>
+                  </div>
                   <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                     <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       500 MATIC
@@ -285,7 +285,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     <Image alt="" src={metamaskFox} height={200} width={200} />
                   </p>
                   <button onClick={connectToWallet}>
-                    <Link className="text-indigo-500 inline-flex items-center">
+                    <div className="text-indigo-500 inline-flex items-center">
                       Connect
                       <svg
                         className="w-4 h-4 ml-2"
@@ -299,7 +299,7 @@ const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
                         <path d="M5 12h14"></path>
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
-                    </Link>
+                    </div>
                   </button>
                 </div>
               </div>
