@@ -59,9 +59,9 @@ export default function Home() {
           </h1>
 
           <div className="mt-2 text-center">
-            <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-3 h-1 ml-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-1 h-1 ml-1 bg-blue-500 rounded-full"></span>
+            <span className="inline-block w-40 h-1 bg-indigo-500 rounded-full"></span>
+            <span className="inline-block w-3 h-1 ml-1 bg-indigo-500 rounded-full"></span>
+            <span className="inline-block w-1 h-1 ml-1 bg-indigo-500 rounded-full"></span>
           </div>
 
           {/* down div  */}
@@ -76,7 +76,7 @@ export default function Home() {
 
             <div className="grid w-full grid-cols-1 gap-8 lg:w-1/2 xl:gap-16 md:grid-cols-2">
               <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                <span className="inline-block p-3 text-indigo-500 bg-indigo-100 rounded-xl dark:text-white dark:bg-indigo-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"
@@ -105,7 +105,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                <span className="inline-block p-3 text-indigo-500 bg-indigo-100 rounded-xl dark:text-white dark:bg-indigo-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"
@@ -139,7 +139,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                <span className="inline-block p-3 text-indigo-500 bg-indigo-100 rounded-xl dark:text-white dark:bg-indigo-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"
@@ -167,7 +167,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                <span className="inline-block p-3 text-indigo-500 bg-indigo-100 rounded-xl dark:text-white dark:bg-indigo-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"

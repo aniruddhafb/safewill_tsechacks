@@ -3,9 +3,16 @@ import React, { useEffect } from "react";
 import { ethers } from "ethers";
 import Image from "next/image";
 import safeWillPng from "../../../public/images/Safewill.png";
+import polygonPng from "../../../public/images/polygon.png";
+import ethereumPng from "../../../public/images/ethereum.png";
+import filPng from "../../../public/images/fil.png";
+import { useState } from "react";
+import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = ({ connectToContract, userAddress }) => {
   // IT CONNECTS TO USER WALLET
+  const [chainIdMain, setChainIdMain] = useState();
+  const [openDropdown, setOpenDropdown] = useState(false);
   const connectToWallet = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
 
@@ -13,9 +20,181 @@ const Navbar = ({ connectToContract, userAddress }) => {
     const signer = provider.getSigner();
     connectToContract(signer);
     const network = await provider.getNetwork();
+    const { chainId } = await provider.getNetwork();
+    setChainIdMain(chainId);
+    console.log(chainIdMain);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    connectToWallet();
+  }, []);
+
+  // switch or add chain mainnets
+  const switchEthereumChain = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x5" }],
+      });
+      setChainIdMain("5");
+      setShowNetworkPopup(!showNetworkPopup);
+      // window.location.reload(false);
+    } catch (error) {
+      if (error.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x5",
+                chainName: "Goerli",
+                nativeCurrency: {
+                  name: "Goerli",
+                  symbol: "ETH",
+                  decimals: 18,
+                },
+                blockExplorerUrls: ["https://etherscan.io"],
+                rpcUrls: ["https://goerli.blockpi.network/v1/rpc/public	"],
+              },
+            ],
+          });
+          setChainIdMain("5");
+          setShowNetworkPopup(!showNetworkPopup);
+        } catch (addError) {
+          console.error(addError);
+        }
+      }
+    }
+  };
+
+  const switchFilChain = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0xC45" }],
+      });
+      setChainIdMain("3141");
+      setShowNetworkPopup(!showNetworkPopup);
+      // window.location.reload(false);
+    } catch (error) {
+      if (error.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0xC45",
+                chainName: "Filecoin - Hyperspace testnet",
+                nativeCurrency: {
+                  name: "Filecoin",
+                  symbol: "Fil",
+                  decimals: 18,
+                },
+                blockExplorerUrls: ["https://fil.com"],
+                rpcUrls: ["https://api.hyperspace.node.glif.io/rpc/v1	"],
+              },
+            ],
+          });
+          setChainIdMain("3141");
+          setShowNetworkPopup(!showNetworkPopup);
+        } catch (addError) {
+          console.error(addError);
+        }
+      }
+    }
+  };
+
+  const switchPolygonChain = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x13881" }],
+      });
+      setChainIdMain("80001");
+      setShowNetworkPopup(!showNetworkPopup);
+      // window.location.reload(false);
+    } catch (error) {
+      if (error.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x89",
+                chainName: "Mumbai",
+                nativeCurrency: {
+                  name: "Polygon",
+                  symbol: "MATIC",
+                  decimals: 18,
+                },
+                blockExplorerUrls: ["https://polygonscan.com/"],
+                rpcUrls: ["https://matic-mumbai.chainstacklabs.com	"],
+              },
+            ],
+          });
+          setChainIdMain("80001");
+          setShowNetworkPopup(!showNetworkPopup);
+        } catch (addError) {
+          console.error(addError);
+        }
+      }
+    }
+  };
+
+  const Dropdown = () => {
+    return (
+      <div className="p-3 rounded-lg shadow-lg text-black absolute right-0 top-16 flex">
+        <div className="flex flex-col justify-center">
+          <Link href={"/edit_profile"}>Edit Profile</Link>
+          <Link href={"/update_presence"}>Update Presence</Link>
+          <Link href={"/action_will"}>My Wills</Link>
+        </div>
+      </div>
+    );
+  };
+
+  // network popup
+  // const networkPopup = () => {
+  //   return (
+  //     <>
+  //       <div className="flex flex-col justify-center w-[200px] absolute top-25 right-0 mt-7 bg-[#2c323d] z-10 text-sm shadow-4xl rounded-b-lg">
+  //         {chainIdMain != 1 && (
+  //           <div
+  //             className="flex flex-row justify-center mt-4 mb-2"
+  //             onClick={() => switchEthereumChain()}
+  //           >
+  //             <Image src={ethereumPng} height="26px" width="28px" />
+  //             <p className="pl-1 pr-2 font-bold text-[#b8c6dc] text-lg">
+  //               Ethereum
+  //             </p>
+  //           </div>
+  //         )}
+  //         {chainIdMain != 56 && (
+  //           <div
+  //             className="flex flex-row justify-center mt-4 mb-2"
+  //             onClick={() => switchBinanceChain()}
+  //           >
+  //             <Image src={binance} height="26px" width="28px" />
+  //             <p className="pl-1 pr-2 font-bold text-[#b8c6dc] text-lg">
+  //               Binance
+  //             </p>
+  //           </div>
+  //         )}
+  //         {chainIdMain != 137 && (
+  //           <div
+  //             className="flex flex-row justify-center mt-2 mb-4"
+  //             onClick={() => switchPolygonChain()}
+  //           >
+  //             <Image src={polygon} height="26px" width="28px" />
+  //             <p className="pl-1 pr-2 font-bold text-[#b8c6dc] text-lg">
+  //               Polygon
+  //             </p>
+  //           </div>
+  //         )}
+  //       </div>
+  //     </>
+  //   );
+  // };
 
   return (
     <header className="text-gray-600 body-font">
@@ -37,20 +216,27 @@ const Navbar = ({ connectToContract, userAddress }) => {
           <Link href="/get_loan" className="mr-5 hover:text-gray-900">
             Get Loan
           </Link>
-          <Link href="/stake_earn" className="mr-5 hover:text-gray-900">
+          {/* <Link href="/stake_earn" className="mr-5 hover:text-gray-900">
             Stake Assets
-          </Link>
+          </Link> */}
         </nav>
         {userAddress ? (
-          <Link href="/edit_profile">
-            <div className="flex items-center gap-x-6 cursor-pointer">
+          <>
+            <div
+              onClick={() => setOpenDropdown(!openDropdown)}
+              className="flex items-center gap-x-6 cursor-pointer"
+            >
               <img
                 class="object-cover w-8 h-8 rounded-full ring ring-gray-300 dark:ring-gray-600"
                 src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
                 alt=""
               />
+              <BsChevronDown />
             </div>
-          </Link>
+            <div>
+              <ul>{openDropdown && <Dropdown />}</ul>
+            </div>
+          </>
         ) : (
           <Link href="/connect_wallet">
             <button
