@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import metamaskFox from "../../public/images/fox.png";
 import Image from "next/image";
 
-const connect_wallet = ({ connectToContract }) => {
+const Connect_wallet = ({ connectToContract }) => {
   // IT CONNECTS TO USER WALLET
   const connectToWallet = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -22,7 +22,7 @@ const connect_wallet = ({ connectToContract }) => {
   };
 
   useEffect(() => {}, []);
-  
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-2 py-12 mx-auto">
@@ -63,4 +63,4 @@ const connect_wallet = ({ connectToContract }) => {
   );
 };
 
-export default connect_wallet;
+export default Connect_wallet;

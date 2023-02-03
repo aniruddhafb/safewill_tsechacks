@@ -7,11 +7,11 @@ import { ethers } from "ethers";
 import metamaskFox from "../../public/images/fox.png";
 import Image from "next/image";
 
-const action_will = ({ provider, userAddress, connectToContract, signer }) => {
+const Action_will = ({ provider, userAddress, connectToContract, signer }) => {
   const [wills, setWills] = useState([]);
   const [wills_by_creator, setWill_by_creator] = useState([]);
 
-  const fetch_wills = async () => {
+  const Fetch_wills = async () => {
     const wills = await provider.get_wills();
     const get_wills_by_willsCreator = await provider.get_wills_by_beneficiary();
     setWill_by_creator(get_wills_by_willsCreator);
@@ -34,7 +34,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
 
   useEffect(() => {
     if (!provider) return;
-    fetch_wills();
+    Fetch_wills();
   }, [userAddress]);
 
   // IT CONNECTS TO USER WALLET
@@ -75,7 +75,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     </h1>
                     <p className="leading-relaxed mb-3">{e.description}</p>
                     {!e.beneficiaries.includes(userAddress) ? (
-                      <a
+                      <Link
                         onClick={() => cancelWill_of_beneficiary(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer text-red-500"
                       >
@@ -92,9 +92,9 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </a>
+                      </Link>
                     ) : (
-                      <a
+                      <Link
                         onClick={() => claimToken(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer"
                       >
@@ -111,7 +111,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </a>
+                      </Link>
                     )}
                     <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                       <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -122,14 +122,14 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                         {e.beneficiaries.length}
                       </span>
                       <span className="text-gray-400 inline-flex items-center leading-none text-sm pl-3">
-                        <a
+                        <Link
                           href={`https://mumbai.polygonscan.com/address/${e.will}`}
                           target="_blank"
                           className="flex"
                         >
                           View Contract{" "}
                           <GoLinkExternal className="text-l pl-1" />
-                        </a>
+                        </Link>
                       </span>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     </h1>
                     <p className="leading-relaxed mb-3">{e.description}</p>
                     {!e.beneficiaries.includes(userAddress) ? (
-                      <a
+                      <Link
                         onClick={() => cancelWill_of_beneficiary(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer text-red-500"
                       >
@@ -171,9 +171,9 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </a>
+                      </Link>
                     ) : (
-                      <a
+                      <Link
                         onClick={() => claimToken(e.will)}
                         className="text-indigo-500 inline-flex items-center cursor-pointer"
                       >
@@ -190,7 +190,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                           <path d="M5 12h14"></path>
                           <path d="M12 5l7 7-7 7"></path>
                         </svg>
-                      </a>
+                      </Link>
                     )}
                     <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                       <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
@@ -201,14 +201,14 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                         {e.beneficiaries.length}
                       </span>
                       <span className="text-gray-400 inline-flex items-center leading-none text-sm pl-3">
-                        <a
+                        <Link
                           href={`https://mumbai.polygonscan.com/address/${e.will}`}
                           target="_blank"
                           className="flex"
                         >
                           View Contract{" "}
                           <GoLinkExternal className="text-l pl-1" />
-                        </a>
+                        </Link>
                       </span>
                     </div>
                   </div>
@@ -229,7 +229,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     {e.title}
                   </h1>
                   <p className="leading-relaxed mb-3">{e.description}</p>
-                  <a
+                  <Link
                     onClick={() => claimToken(e.will)}
                     className="text-indigo-500 inline-flex items-center cursor-pointer"
                   >
@@ -246,7 +246,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
-                  </a>
+                  </Link>
                   <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
                     <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       500 MATIC
@@ -255,9 +255,9 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                       <IoIosPeople className="text-xl" /> 3
                     </span>
                     <span className="text-gray-400 inline-flex items-center leading-none text-sm pl-3">
-                      <a href="polygonscan.com" className="flex">
+                      <Link href="polygonscan.com" className="flex">
                         View Contract <GoLinkExternal className="text-l pl-1" />
-                      </a>
+                      </Link>
                     </span>
                   </div>
                 </div>;
@@ -285,7 +285,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                     <Image alt="" src={metamaskFox} height={200} width={200} />
                   </p>
                   <button onClick={connectToWallet}>
-                    <a className="text-indigo-500 inline-flex items-center">
+                    <Link className="text-indigo-500 inline-flex items-center">
                       Connect
                       <svg
                         className="w-4 h-4 ml-2"
@@ -299,7 +299,7 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
                         <path d="M5 12h14"></path>
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
-                    </a>
+                    </Link>
                   </button>
                 </div>
               </div>
@@ -311,4 +311,4 @@ const action_will = ({ provider, userAddress, connectToContract, signer }) => {
   );
 };
 
-export default action_will;
+export default Action_will;

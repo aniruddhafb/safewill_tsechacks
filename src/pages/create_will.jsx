@@ -3,7 +3,7 @@ import { parseBytes32String } from "ethers/lib/utils";
 import React, { useState } from "react";
 import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
 
-const create_will = ({ provider }) => {
+const Create_will = ({ provider }) => {
   const [benefecaries, setBenefecaries] = useState([
     { address: "", amount: "" },
   ]);
@@ -66,7 +66,7 @@ const create_will = ({ provider }) => {
       <div className="flex text-center justify-center">
         <h1 className="text-2xl">Create Will</h1>
       </div>
-      <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
+      <h2 className="text-lg font-semibold text-black capitalize dark:text-white">
         Account settings
       </h2>
 
@@ -80,7 +80,7 @@ const create_will = ({ provider }) => {
               name="title"
               onChange={handleOnChange}
               type="text"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-black bg-white border border-gray-200 rounded-md dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               placeholder="Will Name"
               required
             />
@@ -94,7 +94,7 @@ const create_will = ({ provider }) => {
               id="description"
               onChange={handleOnChange}
               type="text"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-black bg-white border border-gray-200 rounded-md dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               placeholder="Will Description"
               required
             />
@@ -108,14 +108,14 @@ const create_will = ({ provider }) => {
             <div className=" items-center justify-between w-full">
               {benefecaries.map((inputField, index) => {
                 return (
-                  <div className="flex" key={index}>
+                  <div className="flex " key={index}>
                     <input
                       value={inputField.address}
                       onChange={(e) => handleBeneficaries(index, e)}
                       id="walletAddress"
                       name="address"
                       type="name"
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring mr-5"
+                      className="block w-full px-4 py-2 mt-2 text-black bg-white border border-gray-200 rounded-md dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring mr-5"
                       placeholder="Wallet/ENS Address"
                       required
                     />
@@ -126,7 +126,7 @@ const create_will = ({ provider }) => {
                       name="amount"
                       type="number"
                       step="any"
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring mr-3"
+                      className="block w-full px-4 py-2 mt-2 text-black bg-white border border-gray-200 rounded-md dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring mr-3"
                       placeholder="Amount To Allot"
                       required
                     />
@@ -158,4 +158,4 @@ const create_will = ({ provider }) => {
   );
 };
 
-export default create_will;
+export default Create_will;

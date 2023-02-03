@@ -20,5 +20,12 @@ module.exports = {
         "edf38e734f43872ad5d9c6a42eab6c265200aa3486241be824601a7fc94575ba",
       ],
     },
+    filecoin: {
+      url: "https://api.hyperspace.node.glif.io/rpc/v1",
+      chainId: 3141,
+      accounts: [
+        "edf38e734f43872ad5d9c6a42eab6c265200aa3486241be824601a7fc94575ba",
+      ],
+    },
   },
 };

@@ -5,8 +5,9 @@ import { ethers } from "ethers";
 import abi from "../../artifacts/contracts/WillFactory.sol/WillFactory.json";
 import Footer from "@/components/footer";
 export default function App({ Component, pageProps }) {
-  const contractAddress = "0x1B4cf830B2926407E04785516867FcB5335E48ed";
-  // const contractAddress = "0xF53F0bFbd8Ed9217f673B61271d5C2e2eA9D1167";
+  const contractMumbaiAddress = "0x067Bf3A474F54BCe1e0818FFb95FEDF99d100Af2";
+  const contractGoerliAddress = "0x60E5aABd492a9c6479D74dCec24B0dAa78a89b0B";
+  const contractFilAddress = "0xF53F0bFbd8Ed9217f673B61271d5C2e2eA9D1167";
   const [provider, setProvider] = useState(null);
   const [userAddress, setUserAddress] = useState("");
   const [signer, setSigner] = useState();
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }) {
     let _user_address = await signer.getAddress();
     setUserAddress(_user_address);
     const ProjectFactoryContract = new ethers.Contract(
-      contractAddress,
+      contractMumbaiAddress,
       abi.abi,
       signer
     );

@@ -1,8 +1,8 @@
 pragma solidity ^0.8.0;
 // SPDX-License-Identifier: MIT
 
-import "@openzeppelin/contracts/utils/Counters.sol";
 import './Will.sol';
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract WillFactory{
     using Counters for Counters.Counter;
