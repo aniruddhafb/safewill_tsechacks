@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import abi from "../../artifacts/contracts/WillFactory.sol/WillFactory.json";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 export default function App({ Component, pageProps }) {
   const contractMumbaiAddress = "0x067Bf3A474F54BCe1e0818FFb95FEDF99d100Af2";
   const contractGoerliAddress = "0x60E5aABd492a9c6479D74dCec24B0dAa78a89b0B";
