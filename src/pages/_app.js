@@ -14,17 +14,32 @@ export default function App({ Component, pageProps }) {
 
   const connectToContract = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-
     await provider.send("eth_requestAccounts", []);
+
     const signer = provider.getSigner();
     setSigner(signer);
+
     let _user_address = await signer.getAddress();
     setUserAddress(_user_address);
+
     const network = await provider.getNetwork();
-    if (network.chainId != 80001)
-      return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
+    let contractAddress;
+    let chainIdMain = network.chainId;
+    if (chainIdMain == 5) {
+      contractAddress = contractGoerliAddress;
+    }
+    else if (chainIdMain == 80001) {
+      contractAddress = contractMumbaiAddress;
+    }
+    else {
+      contractAddress = contractFilAddress;
+    }
+
+    // if (chainIdMain != 80001)
+    //   return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
+
     const ProjectFactoryContract = new ethers.Contract(
-      contractMumbaiAddress,
+      contractAddress,
       abi.abi,
       signer
     );
@@ -41,7 +56,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Navbar connectToContract={connectToContract} userAddress={userAddress} />
+      <Navbar connectToContract={connectToContract} userAddress={userAddress} provider={provider} />
       <Component
         {...pageProps}
         provider={provider}

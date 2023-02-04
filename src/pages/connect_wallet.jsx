@@ -16,9 +16,6 @@ const Connect_wallet = ({ connectToContract }) => {
     let address = await signer.getAddress();
     localStorage.setItem("wallet_address", address);
     connectToContract(signer);
-    const network = await provider.getNetwork();
-    if (network.chainId !== 80001)
-      return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
   };
 
   useEffect(() => { }, []);
