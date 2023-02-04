@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import safeWillPng from "../../../public/images/Safewill.png";
+import safeWillPng from "../../../public/images/safewill.png";
 import Image from "next/image";
 
 const Footer = () => {

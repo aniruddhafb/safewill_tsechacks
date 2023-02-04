@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { ethers } from "ethers";
 import Image from "next/image";
-import safeWillPng from "../../../public/images/Safewill.png";
+import safeWillPng from "../../../public/images/safewill.png";
 import polygonPng from "../../../public/images/polygon.png";
 import ethereumPng from "../../../public/images/ethereum.png";
 import filPng from "../../../public/images/fil.png";
