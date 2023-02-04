@@ -21,4 +21,4 @@ polygon, ethereum and filecoin.
 
 To test safewill platform you can visit the following links -
 Replit - https://replit.com/@aniruddhafb/safewilltsechacks?v=1
-Production website - safewill.app (Under development)
+Live website - https://safewill-tsechacks-jjuafhyqy-aniruddhafb.vercel.app/
