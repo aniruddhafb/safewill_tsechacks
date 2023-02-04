@@ -188,7 +188,7 @@ const Navbar = ({ connectToContract, userAddress }) => {
                       <BsChevronDown className="h-3 w-3 2xl:h-3 2xl:w-3 mt-[10px] hover:text-blue-400" />
                     </>
                   )}
-                  {chainIdMain == 1341 && (
+                  {chainIdMain == 3141 && (
                     <>
                       <Image src={filPng} height={25} width={35} alt="filPng" />
                       <p className="pl-1 pr-2 mt-1 font-bold text-[#7d7d7d]">

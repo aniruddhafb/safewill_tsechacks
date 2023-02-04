@@ -35,9 +35,6 @@ export default function App({ Component, pageProps }) {
       contractAddress = contractFilAddress;
     }
 
-    // if (chainIdMain != 80001)
-    //   return alert("Please Switch To Polygon Or Ethereum Or Filecoin Test Networks");
-
     const ProjectFactoryContract = new ethers.Contract(
       contractAddress,
       abi.abi,
