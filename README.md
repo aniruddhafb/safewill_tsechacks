@@ -14,11 +14,13 @@
 1) Safewill provides the best security layer for your wills, as there are many security and saftey checks implimented both on platform aswell as our smart contracts (our smart contracts are public anyone can see and study/verify them)
 
 >What is our tech stack ?
-We are using NextJs for frontend, solidity for smart-contracts, hardhat for deploying and testing smart contracts, ipfs for storing images and other libraries like ethers.js, etc.
+We are using NextJs for frontend, solidity for smart-contracts, hardhat for deploying and testing smart contracts, ipfs for storing images and replit as IDE and hosting platform.
 
 >On what chains we are deployed on ?
 polygon, ethereum and filecoin.
 
 To test safewill platform you can visit the following links -
-Replit - https://replit.com/@aniruddhafb/safewilltsechacks?v=1
-Live website - https://safewill-tsechacks-jjuafhyqy-aniruddhafb.vercel.app/
+Replit Website URL - https://safewilltsechacks.aniruddhafb.repl.co/ (Recommended)
+Vercel Website URL - https://safewill-tsechacks-jjuafhyqy-aniruddhafb.vercel.app/
+
+Check our codebase on replit - https://replit.com/@aniruddhafb/safewilltsechacks?v=1
